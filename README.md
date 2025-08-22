@@ -2,9 +2,7 @@
 
 ### Topic - Telecom Customer Churn prediction
 
-## Key Findings:
-
-Churn Rate (26.5%): A significant portion of customers leave, with Month-to-Month contracts being the riskiest.
+### Key Findings:
 
 Contract Type: Month-to-Month contracts have the highest churn (~43%), compared to ~11% for 2-year contracts.
 
