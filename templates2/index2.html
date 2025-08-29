@@ -4,80 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Churn Prediction</title>
+    <!-- Link to CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Customer Churn Prediction</h1>
+        
         <form action="/predict" method="post">
-            <label>Gender (Male=1, Female=0):</label>
-            <input type="number" name="gender" required><br>
-        
-            <label>Senior Citizen (Yes=1, No=0):</label>
-            <input type="number" name="SeniorCitizen" required><br>
-        
-            <label>Partner (Yes=1, No=0):</label>
-            <input type="number" name="Partner" required><br>
-        
-            <label>Dependents (Yes=1, No=0):</label>
-            <input type="number" name="Dependents" required><br>
-        
-            <label>Tenure:</label>
-            <input type="number" name="tenure" required><br>
-        
-            <label>Phone Service (Yes=1, No=0):</label>
-            <input type="number" name="PhoneService" required><br>
-        
-            <label>Multiple Lines (Yes=1, No=0, No phone service=2):</label>
-            <input type="number" name="MultipleLines" required><br>
-        
-            <label>Internet Service (Fiber optic=0, DSL=1, No=2):</label>
-            <input type="number" name="InternetService" required><br>
-        
-            <label>Online Security (Yes=1, No=0, No internet service=2):</label>
-            <input type="number" name="OnlineSecurity" required><br>
-        
-            <label>Online Backup (Yes=1, No=0, No internet service=2):</label>
-            <input type="number" name="OnlineBackup" required><br>
-        
-            <label>Device Protection (Yes=1, No=0, No internet service=2):</label>
-            <input type="number" name="DeviceProtection" required><br>
-        
-            <label>Tech Support (Yes=1, No=0, No internet service=2):</label>
-            <input type="number" name="TechSupport" required><br>
-        
-            <label>Streaming TV (Yes=1, No=0, No internet service=2):</label>
-            <input type="number" name="StreamingTV" required><br>
-        
-            <label>Streaming Movies (Yes=1, No=0, No internet service=2):</label>
-            <input type="number" name="StreamingMovies" required><br>
-        
-            <label>Contract (Month-to-month=0, One year=1, Two year=2):</label>
-            <input type="number" name="Contract" required><br>
-        
-            <label>Paperless Billing (Yes=1, No=0):</label>
-            <input type="number" name="PaperlessBilling" required><br>
-        
-            <label>Payment Method (Mailed check=0, Electronic check=1, Bank transfer=2, Credit card=3):</label>
-            <input type="number" name="PaymentMethod" required><br>
-        
-            <label>Monthly Charges:</label>
-            <input type="number" name="MonthlyCharges" step="0.01" required><br>
-        
-            <label>Total Charges:</label>
-            <input type="number" name="TotalCharges" step="0.01" required><br>
-        
+            <div class="form-grid">
+                <div>
+                    <label>Gender (Male=1, Female=0):</label>
+                    <input type="number" name="gender" required>
+                </div>
+                
+                <div>
+                    <label>Senior Citizen (Yes=1, No=0):</label>
+                    <input type="number" name="SeniorCitizen" required>
+                </div>
+                
+                <div>
+                    <label>Partner (Yes=1, No=0):</label>
+                    <input type="number" name="Partner" required>
+                </div>
+                
+                <div>
+                    <label>Dependents (Yes=1, No=0):</label>
+                    <input type="number" name="Dependents" required>
+                </div>
+                
+                <div>
+                    <label>Tenure:</label>
+                    <input type="number" name="tenure" required>
+                </div>
+                
+                <div>
+                    <label>Phone Service (Yes=1, No=0):</label>
+                    <input type="number" name="PhoneService" required>
+                </div>
+                
+                <div>
+                    <label>Multiple Lines (Yes=1, No=0, No phone=2):</label>
+                    <input type="number" name="MultipleLines" required>
+                </div>
+                
+                <div>
+                    <label>Internet Service (Fiber=0, DSL=1, No=2):</label>
+                    <input type="number" name="InternetService" required>
+                </div>
+                
+                <div>
+                    <label>Online Security (Yes=1, No=0, No internet=2):</label>
+                    <input type="number" name="OnlineSecurity" required>
+                </div>
+                
+                <div>
+                    <label>Online Backup (Yes=1, No=0, No internet=2):</label>
+                    <input type="number" name="OnlineBackup" required>
+                </div>
+                
+                <div>
+                    <label>Device Protection (Yes=1, No=0, No internet=2):</label>
+                    <input type="number" name="DeviceProtection" required>
+                </div>
+                
+                <div>
+                    <label>Tech Support (Yes=1, No=0, No internet=2):</label>
+                    <input type="number" name="TechSupport" required>
+                </div>
+                
+                <div>
+                    <label>Streaming TV (Yes=1, No=0, No internet=2):</label>
+                    <input type="number" name="StreamingTV" required>
+                </div>
+                
+                <div>
+                    <label>Streaming Movies (Yes=1, No=0, No internet=2):</label>
+                    <input type="number" name="StreamingMovies" required>
+                </div>
+                
+                <div>
+                    <label>Contract (Month=0, Year=1, Two Years=2):</label>
+                    <input type="number" name="Contract" required>
+                </div>
+                
+                <div>
+                    <label>Paperless Billing (Yes=1, No=0):</label>
+                    <input type="number" name="PaperlessBilling" required>
+                </div>
+                
+                <div>
+                    <label>Payment Method (Mailed=0, Electronic=1, Bank=2, Card=3):</label>
+                    <input type="number" name="PaymentMethod" required>
+                </div>
+                
+                <div>
+                    <label>Monthly Charges:</label>
+                    <input type="number" step="0.01" name="MonthlyCharges" required>
+                </div>
+                
+                <div>
+                    <label>Total Charges:</label>
+                    <input type="number" step="0.01" name="TotalCharges" required>
+                </div>
+            </div>
+            
+            <!-- Full width button -->
             <button type="submit">Predict</button>
         </form>
-        <h3 id="predictionResult"></h3>
         
+        <!-- Prediction Result -->
         {% if prediction_text %}
-        <div class="result">{{ prediction_text }}</div>
+            <div class="result">{{ prediction_text }}</div>
         {% endif %}
     </div>
-
 </body>
 </html>
-</body>
-</html>
-
